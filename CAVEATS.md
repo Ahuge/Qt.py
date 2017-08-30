@@ -3,6 +3,7 @@
 There are cases where Qt.py is not handling incompatibility issues.
 
 - [QtCore.QAbstractItemModel.createIndex](#qtcoreqabstractmodelcreateindex)
+  [QtCore.QAbstractItemModel.reset](#qtcoreabstractmodel.reset)
 - [QtCore.QItemSelection](#qtcoreqitemselection)
 - [QtCore.Slot](#qtcoreslot)
 - [QtWidgets.QAction.triggered](#qtwidgetsqactiontriggered)
@@ -68,6 +69,32 @@ I had been using the id as an index into a list. But the unexpected return value
 <br>
 <br>
 <br>
+
+
+#### QtCore.QAbstractItemModel.reset
+
+In PySide2 the `QAbstractItemModel` is missing it's `reset` method.
+In Qt5.9 the method is **[obsolete](http://doc.qt.io/qt-5/qabstractitemmodel-obsolete.html)**
+
+```python
+# PySide
+>>> from Qt import QtGui
+>>> model = QtGui.QStandartItemModel()
+>>> model.reset()
+```
+
+```python
+# PySide2
+>>> from Qt import QtGui
+>>> model = QtGui.QStandardItemModel()
+>>> model.reset()
+...
+AttributeError: type object 'PySide2.QtGui.QStandardItemModel' has no attribute 'reset'
+```
+
+##### Usecase
+This was found in some of our old Qt Code subclassing QtCore.QAbstractTableModel.
+- @Ahuge
 
 
 #### QtCore.QItemSelection
