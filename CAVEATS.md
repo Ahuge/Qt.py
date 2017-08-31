@@ -2,8 +2,8 @@
 
 There are cases where Qt.py is not handling incompatibility issues.
 
-- [QtCore.QAbstractItemModel.createIndex](#qtcoreqabstractmodelcreateindex)
-  [QtCore.QAbstractItemModel.reset](#qtcoreabstractmodel.reset)
+- [QtCore.QAbstractItemModel.createIndex](#qtcoreqabstractitemmodelcreateindex)
+- [QtCore.QAbstractItemModel.reset](#qtcoreqabstractitemmodelreset)
 - [QtCore.QItemSelection](#qtcoreqitemselection)
 - [QtCore.Slot](#qtcoreslot)
 - [QtWidgets.QAction.triggered](#qtwidgetsqactiontriggered)
@@ -96,6 +96,8 @@ AttributeError: type object 'PySide2.QtGui.QStandardItemModel' has no attribute 
 This was found in some of our old Qt Code subclassing QtCore.QAbstractTableModel.
 - @Ahuge
 
+<br>
+<br>
 
 #### QtCore.QItemSelection
 
